@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <title>go2url</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/contrabass.css@1.0.4/dist/contrabass.min.css" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500" rel="stylesheet" />
+
+  <style>
+    *, *:before, *:after {
+      box-sizing: border-box
+    }
+    body {
+      font: 18px 'Roboto Mono', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    }
+    a {
+      color: #4285f4;
+    }
+    #form {
+      width: 100%;
+      max-width: 500px;
+    }
+    #url {
+      background-color: #fff;
+      border: 1px solid rgba(185, 185, 185, 0.54);
+      cursor: text;
+      display: inline-block;
+      font: 16px 'Roboto Mono', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+      width: 100%;
+      height: 50px;
+      outline: none;
+      border-radius: 32px;
+      padding: 0 72px 0 24px;
+      line-height: 50px;
+      vertical-align: middle;
+      -webkit-appearance: none;
+    }
+    #cta {
+      color: #fff;
+      font: 18px 'Roboto Mono', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      width: 60px;
+      height: 50px;
+      background-color: #4285f4;
+      border: none;
+      position: absolute;
+      right: 0;
+      top: 0;
+      border-radius: 32px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      cursor: pointer;
+      -webkit-appearance: none;
+      outline: none;
+    }
+    .copyright {
+      font-size: 11px;
+      color: rgba(185, 185, 185, 1);
+      position: fixed;
+      bottom: 10px;
+      right: 0;
+      left: 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <form id="form" class="center mt4 mx-auto relative">
+    <input type="url" id="url" placeholder="https://google.com" />
+    <button type="submit" id="cta">Go</button>
+  </form>
+
+  <div class="copyright mx-auto">Source code is available at <a href="https://github.com/voronianski/go2url">https://github.com/voronianski/go2url</a></div>
+
+  <script>
+  (function () {
+    var $form = document.getElementById('form');
+    var $input = document.getElementById('url');
+
+    $form.onsubmit = function (e) {
+      e.preventDefault();
+
+      var value = $input.value;
+
+      if (!/^https?:\/\//.test(value)) {
+        return alert('Please paste a valid URL!');
+      }
+
+      window.location = $input.value;
+    };
+  })();
+  </script>
+</body>
+</html>
