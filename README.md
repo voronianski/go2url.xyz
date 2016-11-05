@@ -1,4 +1,4 @@
-# [go2url](https://go2url.xyz)
+# [go2url.xyz](https://go2url.xyz)
 
 > Go to URL in a sec with https://go2url.xyz!
 
