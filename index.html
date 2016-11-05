@@ -6,8 +6,17 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
+  <script type="text/javascript">
+      var host = 'go2url.xyz';
+      if ((window.location.host === host) &&
+        (window.location.protocol !== 'https:')) {
+        window.location.protocol = 'https';
+      }
+  </script>
+
   <title>go2url</title>
 
+  <link rel="canonical" href="https://go2url.xyz" />
   <link rel="stylesheet" href="https://unpkg.com/contrabass.css@1.0.4/dist/contrabass.min.css" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500" rel="stylesheet" />
 
